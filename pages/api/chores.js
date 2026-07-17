@@ -1,7 +1,8 @@
-import { createClient } from 'redis';
+import { Redis } from '@upstash/redis';
 
-const client = createClient({
-  url: `redis://:${process.env.UPSTASH_REDIS_PASSWORD}@${process.env.UPSTASH_REDIS_HOST}:${process.env.UPSTASH_REDIS_PORT}`,
+const redis = new Redis({
+  url: process.env.UPSTASH_REDIS_REST_URL,
+  token: process.env.UPSTASH_REDIS_REST_TOKEN,
 });
 
 const CHORES_LIST = [
@@ -31,14 +32,11 @@ export default async function handler(req, res) {
   }
 
   try {
-    await client.connect();
-
     // GET: Fetch all chores for the week + historical earnings
     if (req.method === 'GET') {
       const { child } = req.query;
 
       if (!child) {
-        await client.disconnect();
         return res.status(400).json({ error: 'Child parameter required' });
       }
 
@@ -47,15 +45,14 @@ export default async function handler(req, res) {
       const totalEarningsKey = `asmproductions:earnings:total:${child}`;
       const historyKey = `asmproductions:earnings:history:${child}`;
 
-      const choreData = await client.get(choreKey);
-      const totalEarnings = await client.get(totalEarningsKey);
-      const historyData = await client.get(historyKey);
+      // @upstash/redis auto-deserializes JSON values
+      const choreData = await redis.get(choreKey);
+      const totalEarnings = await redis.get(totalEarningsKey);
+      const historyData = await redis.get(historyKey);
 
-      const chores = choreData ? JSON.parse(choreData) : initializeWeeklyChores();
+      const chores = choreData || initializeWeeklyChores();
       const total = totalEarnings ? parseInt(totalEarnings) : 0;
-      const history = historyData ? JSON.parse(historyData) : [];
-
-      await client.disconnect();
+      const history = historyData || [];
 
       return res.status(200).json({
         chores,
@@ -69,8 +66,7 @@ export default async function handler(req, res) {
     if (req.method === 'POST') {
       const { child, day, chore, checked } = req.body;
 
-      if (!child || !day || !chore === undefined) {
-        await client.disconnect();
+      if (!child || !day || chore === undefined) {
         return res.status(400).json({ error: 'Missing required fields' });
       }
 
@@ -79,24 +75,17 @@ export default async function handler(req, res) {
       const totalEarningsKey = `asmproductions:earnings:total:${child}`;
       const historyKey = `asmproductions:earnings:history:${child}`;
 
-      let chores = {};
-      const existingData = await client.get(choreKey);
-      if (existingData) {
-        chores = JSON.parse(existingData);
-      } else {
-        chores = initializeWeeklyChores();
-      }
+      const existingData = await redis.get(choreKey);
+      const chores = existingData || initializeWeeklyChores();
 
-      // Initialize day if it doesn't exist
       if (!chores[day]) {
         chores[day] = {};
       }
 
-      // Update chore status
       chores[day][chore] = checked;
 
-      // Save weekly chores
-      await client.set(choreKey, JSON.stringify(chores), { EX: 604800 });
+      // Save weekly chores (7-day TTL)
+      await redis.set(choreKey, chores, { ex: 604800 });
 
       // Calculate this week's total
       let weeklyTotal = 0;
@@ -106,18 +95,15 @@ export default async function handler(req, res) {
         });
       });
 
-      // Update cumulative earnings
-      const currentTotal = parseInt(await client.get(totalEarningsKey)) || 0;
-      await client.set(totalEarningsKey, currentTotal + (checked ? 1 : -1));
+      // Update cumulative all-time earnings
+      const currentTotal = parseInt(await redis.get(totalEarningsKey)) || 0;
+      const newTotal = currentTotal + (checked ? 1 : -1);
+      await redis.set(totalEarningsKey, newTotal);
 
-      // Update history (track by week)
-      let history = [];
-      const historyRaw = await client.get(historyKey);
-      if (historyRaw) {
-        history = JSON.parse(historyRaw);
-      }
+      // Update weekly history
+      const historyRaw = await redis.get(historyKey);
+      const history = historyRaw || [];
 
-      // Check if this week is already in history
       const weekIndex = history.findIndex((entry) => entry.week === weekKey);
       if (weekIndex >= 0) {
         history[weekIndex].total = weeklyTotal;
@@ -125,15 +111,13 @@ export default async function handler(req, res) {
         history.push({ week: weekKey, total: weeklyTotal });
       }
 
-      await client.set(historyKey, JSON.stringify(history));
-
-      await client.disconnect();
+      await redis.set(historyKey, history);
 
       return res.status(200).json({
         success: true,
         chores,
         weeklyTotal,
-        allTimeTotal: currentTotal + (checked ? 1 : -1),
+        allTimeTotal: newTotal,
       });
     }
 
