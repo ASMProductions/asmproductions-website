@@ -1,22 +1,14 @@
 import { useEffect, useState } from 'react';
 import Layout from '../components/Layout';
 
-const CHORES_LIST = [
-  'Breakfast prep/cleanup',
-  'Lunch prep/cleanup',
-  'Snack prep/cleanup',
-  'Dinner prep/cleanup',
-  'Washing clothes',
-  'Drying clothes',
-  'Folding clothes',
-  'Putting clothes away',
-  'Washing dishes',
-  'Drying dishes',
-  'Cleaning room',
-  'Sweeping home',
-  'Mopping home',
-  'Wiping table and counters',
+const CHORES = [
+  { name: 'Breakfast clean-up', detail: 'dishes, floors, tables & counters' },
+  { name: 'Lunch clean-up', detail: 'dishes, floors, tables & counters' },
+  { name: 'Dinner clean-up', detail: 'dishes, floors, tables & counters' },
+  { name: 'Room clean-up', detail: 'beds, floors & closet' },
+  { name: 'Laundry', detail: 'wash, dry, fold & put away' },
 ];
+const CHORES_LIST = CHORES.map((c) => c.name);
 
 const DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
@@ -28,6 +20,7 @@ export default function Chores() {
   const [chores, setChores] = useState({});
   const [weeklyTotal, setWeeklyTotal] = useState(0);
   const [allTimeTotal, setAllTimeTotal] = useState(0);
+  const [submitMessage, setSubmitMessage] = useState('');
   const [history, setHistory] = useState([]);
   const [activeTab, setActiveTab] = useState('tracker');
 
@@ -120,6 +113,28 @@ export default function Chores() {
       }
     } catch (error) {
       console.error('Error updating chore:', error);
+    }
+  };
+
+  const handleSubmitWeek = async () => {
+    setSubmitMessage('');
+    try {
+      const res = await fetch('/api/chores', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ child: selectedChild }),
+      });
+      if (res.ok) {
+        const data = await res.json();
+        setSubmitMessage(
+          `Week submitted for ${selectedChild}: ${data.weeklyTotal} chores logged ($${data.weeklyTotal}.00).`
+        );
+        loadChores();
+      } else {
+        setSubmitMessage('Could not submit the week. Please try again.');
+      }
+    } catch (error) {
+      setSubmitMessage('Could not submit the week. Please try again.');
     }
   };
 
@@ -272,10 +287,17 @@ export default function Chores() {
                   </tr>
                 </thead>
                 <tbody>
-                  {CHORES_LIST.map((chore) => (
-                    <tr key={chore} style={{ borderBottom: '1px solid #e8e6e3' }}>
-                      <td style={{ padding: '1rem', fontSize: '0.95rem', fontWeight: 500 }}>{chore}</td>
-                      {DAYS.map((day) => (
+                  {CHORES.map((choreObj) => (
+                    <tr key={choreObj.name} style={{ borderBottom: '1px solid #e8e6e3' }}>
+                      <td style={{ padding: '1rem', fontSize: '0.95rem', fontWeight: 500 }}>
+                        {choreObj.name}
+                        <div style={{ fontSize: '0.78rem', color: '#999', fontWeight: 400, marginTop: '0.15rem' }}>
+                          {choreObj.detail}
+                        </div>
+                      </td>
+                      {DAYS.map((day) => {
+                        const chore = choreObj.name;
+                        return (
                         <td
                           key={`${day}-${chore}`}
                           style={{
@@ -298,11 +320,23 @@ export default function Chores() {
                             }}
                           />
                         </td>
-                      ))}
+                        );
+                      })}
                     </tr>
                   ))}
                 </tbody>
               </table>
+
+              <div style={{ marginTop: '2rem', textAlign: 'center' }}>
+                <button onClick={handleSubmitWeek} className="btn">
+                  Submit This Week
+                </button>
+                {submitMessage && (
+                  <p style={{ marginTop: '1rem', color: '#b8764e', fontWeight: 500 }}>
+                    {submitMessage}
+                  </p>
+                )}
+              </div>
             </div>
           )}
 
