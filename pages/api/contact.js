@@ -1,4 +1,6 @@
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -12,19 +14,9 @@ export default async function handler(req, res) {
   }
 
   try {
-    const transporter = nodemailer.createTransport({
-      host: 'smtp.hostgator.com',
-      port: 465,
-      secure: true,
-      auth: {
-        user: process.env.HOSTGATOR_SMTP_USER,
-        pass: process.env.HOSTGATOR_SMTP_PASS,
-      },
-    });
-
-    await transporter.sendMail({
-      from: 'noreply@asmproductions.co',
-      to: 'contact@asmproductions.co',
+    const { data, error } = await resend.emails.send({
+      from: 'ASM Productions <noreply@asmproductions.co>',
+      to: ['contact@asmproductions.co'],
       replyTo: email,
       subject: `New message from ${name} via asmproductions.co`,
       html: `
@@ -35,6 +27,11 @@ export default async function handler(req, res) {
         <p>${message.replace(/\n/g, '<br>')}</p>
       `,
     });
+
+    if (error) {
+      console.error('Resend error:', error);
+      return res.status(500).json({ error: 'Failed to send message' });
+    }
 
     return res.status(200).json({ success: true });
   } catch (error) {
