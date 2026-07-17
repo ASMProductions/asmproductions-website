@@ -13,7 +13,6 @@ export default function Layout({ children }) {
               <li><Link href="/paradise-gardens">Paradise Gardens</Link></li>
               <li><Link href="/history">History</Link></li>
               <li><Link href="/contact">Contact</Link></li>
-              <li><Link href="/chores">Chores</Link></li>
             </ul>
           </nav>
         </div>
