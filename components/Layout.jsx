@@ -23,7 +23,6 @@ export default function Layout({ children }) {
       <footer>
         <div className="container">
           <p>&copy; 2026 ASM Productions. All rights reserved.</p>
-          <p>Amin Muhammad | Ellerslie, Georgia</p>
         </div>
       </footer>
     </>
