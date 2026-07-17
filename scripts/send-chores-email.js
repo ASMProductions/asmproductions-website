@@ -85,7 +85,7 @@ async function sendChoresEmail() {
     `;
 
     const { error } = await resend.emails.send({
-      from: 'ASM Productions <noreply@asmproductions.co>',
+      from: 'ASM Productions <noreply@thereparationsgame.com>',
       to: ['amin@asmproductions.co'],
       subject: `Weekly Chores Report - Week of ${weekStart.toLocaleDateString()}`,
       html: emailBody,
