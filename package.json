@@ -14,8 +14,7 @@
     "next": "^14.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "redis": "^4.6.11",
-    "nodemailer": "^6.9.7"
+    "resend": "^4.8.0"
   },
   "devDependencies": {
     "eslint": "^8.52.0",
