@@ -45,6 +45,16 @@ export default function History() {
           <p>
             The warrior's path is the path of sustained excellence. Every form, every movement, every breath is a meditation on presence and precision.
           </p>
+          <figure style={{ margin: '2rem auto 0', maxWidth: '260px' }}>
+            <img
+              src="/images/sidekick-50.png"
+              alt="Amin executing a side kick at age 50"
+              style={{ width: '100%', display: 'block' }}
+            />
+            <figcaption style={{ fontSize: '0.85rem', color: '#999', marginTop: '0.5rem', textAlign: 'center' }}>
+              A side kick at 50 — discipline sustained.
+            </figcaption>
+          </figure>
         </div>
       </section>
 
@@ -150,7 +160,7 @@ export default function History() {
                 style={{ width: '100%', borderRadius: '4px', display: 'block', objectFit: 'cover' }}
               />
               <figcaption style={{ fontSize: '0.85rem', color: '#999', marginTop: '0.5rem' }}>
-                Saviours' Day, 2011.
+                With the great Jibril Muhammad — Saviours' Day, 2011.
               </figcaption>
             </figure>
             <figure style={{ flex: '1 1 280px', margin: 0 }}>

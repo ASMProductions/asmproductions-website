@@ -22,10 +22,18 @@ export default function Contact() {
     setStatus('Sending...');
 
     try {
-      // For now, just log the data. In production, this would send to an email service.
-      console.log('Contact form submitted:', formData);
-      setStatus('Thank you for your message. I will be in touch soon.');
-      setFormData({ name: '', email: '', message: '' });
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        setStatus('Thank you for your message. It has been sent.');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        setStatus('Something went wrong. Please try again.');
+      }
     } catch (error) {
       setStatus('Error sending message. Please try again.');
     }
@@ -80,19 +88,6 @@ export default function Contact() {
                 {status}
               </p>
             )}
-
-            <div style={{ marginTop: '3rem', paddingTop: '2rem', borderTop: '1px solid #e8e6e3' }}>
-              <h3>Connect Directly</h3>
-              <p>
-                Email: <a href="mailto:amin@asmproductions.co">amin@asmproductions.co</a>
-              </p>
-              <p>
-                Phone: <a href="tel:651-226-6913">651-226-6913</a>
-              </p>
-              <p>
-                Location: Ellerslie, Georgia
-              </p>
-            </div>
           </div>
         </div>
       </section>
