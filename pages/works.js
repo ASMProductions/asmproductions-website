@@ -33,27 +33,6 @@ export default function Works() {
     },
   ];
 
-  const platforms = [
-    {
-      name: 'Mastery Level Fasting',
-      url: 'https://masterylevelfasting.com',
-      description:
-        'The flagship platform. A complete learning ecosystem for fasting discipline, community, and mastery-level progression.',
-    },
-    {
-      name: 'The International Lover',
-      url: 'https://theinternationallover.com',
-      description:
-        'Matrimonial standards, vetting frameworks, and the philosophy of relationship readiness across cultures.',
-    },
-    {
-      name: 'The Virtuous Girl',
-      url: 'https://thevirtuousgirl.com',
-      description:
-        'A dedicated community and resource hub for women pursuing excellence and virtuous living.',
-    },
-  ];
-
   const skills = [
     {
       category: 'DevOps & Platform Engineering',
@@ -102,7 +81,7 @@ export default function Works() {
       <section className="hero">
         <div className="container">
           <h1>Works</h1>
-          <p>Books, platforms, and technical mastery. The tangible output of decades of discipline and research.</p>
+          <p>Books and technical mastery. The tangible output of decades of discipline and research.</p>
         </div>
       </section>
 
@@ -133,25 +112,6 @@ export default function Works() {
                 <p>{book.description}</p>
                 <a href={book.link} target="_blank" rel="noopener noreferrer" className="btn">
                   Learn More
-                </a>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Platforms Section */}
-      <section className="section">
-        <div className="container">
-          <h2>Digital Platforms</h2>
-          <div className="accent-line"></div>
-          <div className="grid">
-            {platforms.map((platform, idx) => (
-              <div key={idx} className="card">
-                <h3>{platform.name}</h3>
-                <p>{platform.description}</p>
-                <a href={platform.url} target="_blank" rel="noopener noreferrer" className="btn">
-                  Visit Platform
                 </a>
               </div>
             ))}
