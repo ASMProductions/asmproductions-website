@@ -52,7 +52,7 @@ export default function History() {
           <h2>Martial Arts & Internal Disciplines</h2>
           <div className="accent-line"></div>
           <p>
-            My path in the martial arts began at ten years old at the Inner Truth School of Ninjitsu in Saint Paul, Minnesota, under Sensei Clifford "Chick" Moody—himself a student of Grandmaster Ronald Duncan, founder of the Way of the Winds dojo in New York City and widely honored as the "Father of American Ninjutsu." Through this lineage I inherited nearly fifty years of disciplined practice rooted in authentic tradition.
+            My path in the martial arts began in 1979 at ten years old, at the Inner Truth School of Ninjitsu in Saint Paul, Minnesota, under Sensei Clifford "Chick" Moody—himself a student of Grandmaster Ronald Duncan, founder of the Way of the Winds dojo in New York City and widely honored as the "Father of American Ninjutsu." Through this lineage I have inherited a lifetime of disciplined practice rooted in authentic tradition.
           </p>
           <p>
             Across those decades I have pursued mastery in classical and internal disciplines—Japanese and Chinese arts, and the timeless principles of combat, focus, and the integration of body, breath, and spirit. These practices mirror and reinforce the disciplines of fasting, creative work, and infrastructure mastery.

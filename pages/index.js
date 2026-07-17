@@ -33,7 +33,7 @@ export default function Home() {
           <div style={{ display: 'flex', gap: '2.5rem', alignItems: 'flex-start', flexWrap: 'wrap' }}>
             <div style={{ flex: '1 1 340px' }}>
               <p>
-                For over three decades, I've pursued mastery across seemingly disparate domains: enterprise infrastructure automation, sacred fasting discipline, creative expression, martial arts, and the visionary development of spaces for unrestricted wellness. These are not separate lives—they are expressions of a single commitment: sustained discipline, self-purification, and service.
+                Since 1979, I've pursued mastery across seemingly disparate domains: enterprise infrastructure automation, sacred fasting discipline, creative expression, martial arts, and the visionary development of spaces for unrestricted wellness. These are not separate lives—they are expressions of a single commitment: sustained discipline, self-purification, and service.
               </p>
               <p>
                 From pioneering Minnesota's first Hip-Hop B-Boy crew in 1982, to engineering mission-critical financial systems for Tier-1 institutions, to authoring foundational works on fasting and matrimonial readiness, to witnessing Prince's passing at Paisley Park, my path has been defined by presence, precision, and the relentless pursuit of excellence.

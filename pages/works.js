@@ -15,7 +15,7 @@ export default function Works() {
       cover: '/images/cover-mastery.jpg',
       link: 'https://masterylevelfasting.com',
       description:
-        'Advanced methodologies for practitioners ready to transcend the foundational stages. This work documents 35+ years of personal practice and the principles that distinguish true mastery from mere abstinence.',
+        'Advanced methodologies for practitioners ready to transcend the foundational stages. This work documents personal practice since 1990 and the principles that distinguish true mastery from mere abstinence.',
     },
     {
       title: 'The International Lover',
