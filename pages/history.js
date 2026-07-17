@@ -21,16 +21,28 @@ export default function History() {
           <p>
             The B-Boy philosophy of breaking—the breaking of one's ego, the breaking of boundaries, the building of community through battle and mutual elevation—became foundational to my understanding of discipline, innovation, and respect for the craft.
           </p>
-          <figure style={{ margin: '2rem auto 0', maxWidth: '380px' }}>
-            <img
-              src="/images/bboy-1986.jpg"
-              alt="Amin ('Bitt') in a headstand freeze, 1986"
-              style={{ width: '100%', borderRadius: '4px', display: 'block' }}
-            />
-            <figcaption style={{ fontSize: '0.85rem', color: '#999', marginTop: '0.5rem', textAlign: 'center' }}>
-              "Bitt" — headstand freeze, circa 1986
-            </figcaption>
-          </figure>
+          <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', justifyContent: 'center', marginTop: '2rem' }}>
+            <figure style={{ flex: '0 1 300px', margin: 0 }}>
+              <img
+                src="/images/bboy-1986.jpg"
+                alt="Amin ('Bitt') in a headstand freeze, 1986"
+                style={{ width: '100%', borderRadius: '4px', display: 'block' }}
+              />
+              <figcaption style={{ fontSize: '0.85rem', color: '#999', marginTop: '0.5rem', textAlign: 'center' }}>
+                "Bitt" — headstand freeze, circa 1986.
+              </figcaption>
+            </figure>
+            <figure style={{ flex: '0 1 300px', margin: 0 }}>
+              <img
+                src="/images/wildstyle-1986.jpg"
+                alt="WildStyle breakdance crew, 1986 — Amin center, as 'Bitt'"
+                style={{ width: '100%', borderRadius: '4px', display: 'block' }}
+              />
+              <figcaption style={{ fontSize: '0.85rem', color: '#999', marginTop: '0.5rem', textAlign: 'center' }}>
+                WildStyle breakdance crew, 1986 — center, as "Bitt."
+              </figcaption>
+            </figure>
+          </div>
         </div>
       </section>
 
@@ -40,11 +52,48 @@ export default function History() {
           <h2>Martial Arts & Internal Disciplines</h2>
           <div className="accent-line"></div>
           <p>
-            For decades, I have pursued mastery across classical and internal martial arts disciplines—Japanese, Chinese, and the timeless principles of combat, focus, and the integration of body, breath, and spirit. These practices mirror and reinforce the disciplines of fasting, creative work, and infrastructure mastery.
+            My path in the martial arts began at ten years old at the Inner Truth School of Ninjitsu in Saint Paul, Minnesota, under Sensei Clifford "Chick" Moody—himself a student of Grandmaster Ronald Duncan, founder of the Way of the Winds dojo in New York City and widely honored as the "Father of American Ninjutsu." Through this lineage I inherited nearly fifty years of disciplined practice rooted in authentic tradition.
+          </p>
+          <p>
+            Across those decades I have pursued mastery in classical and internal disciplines—Japanese and Chinese arts, and the timeless principles of combat, focus, and the integration of body, breath, and spirit. These practices mirror and reinforce the disciplines of fasting, creative work, and infrastructure mastery.
           </p>
           <p>
             The warrior's path is the path of sustained excellence. Every form, every movement, every breath is a meditation on presence and precision.
           </p>
+
+          <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', marginTop: '2rem' }}>
+            <figure style={{ flex: '1 1 240px', margin: 0 }}>
+              <img
+                src="/images/moody-duncan.jpg"
+                alt="Sensei Clifford Moody and Grandmaster Ronald Duncan"
+                style={{ width: '100%', borderRadius: '4px', display: 'block', objectFit: 'cover' }}
+              />
+              <figcaption style={{ fontSize: '0.85rem', color: '#999', marginTop: '0.5rem' }}>
+                Sensei Clifford "Chick" Moody (right) with Grandmaster Ronald Duncan.
+              </figcaption>
+            </figure>
+            <figure style={{ flex: '1 1 240px', margin: 0 }}>
+              <img
+                src="/images/manriki-gusari.jpg"
+                alt="Sensei Moody demonstrating Manriki Gusari"
+                style={{ width: '100%', borderRadius: '4px', display: 'block', objectFit: 'cover' }}
+              />
+              <figcaption style={{ fontSize: '0.85rem', color: '#999', marginTop: '0.5rem' }}>
+                Sensei Moody demonstrating Manriki Gusari, the weighted chain.
+              </figcaption>
+            </figure>
+            <figure style={{ flex: '1 1 240px', margin: 0 }}>
+              <img
+                src="/images/legends-martial-arts.jpg"
+                alt="Legends of the Martial Arts: Moses Powell, Ronald Duncan, George Cofield"
+                style={{ width: '100%', borderRadius: '4px', display: 'block', objectFit: 'cover' }}
+              />
+              <figcaption style={{ fontSize: '0.85rem', color: '#999', marginTop: '0.5rem' }}>
+                Legends of the Martial Arts: O'Sensei Moses Powell, Ronald Duncan, and George Cofield.
+              </figcaption>
+            </figure>
+          </div>
+
           <figure style={{ margin: '2rem auto 0', maxWidth: '260px' }}>
             <img
               src="/images/sidekick-50.png"

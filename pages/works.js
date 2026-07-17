@@ -69,7 +69,7 @@ export default function Works() {
       items: [
         '35% reduction in production downtime through proactive reliability engineering',
         '60% improvement in operational efficiency via automation',
-        'Tier-1 institutional trust across JPMorgan Chase, Wells Fargo, and government-backed entities',
+        'Trusted across Tier-1 banking institutions and government-backed entities',
         'Leadership of global technical teams',
         'Enterprise-scale infrastructure modernization',
       ],
