@@ -1,33 +1,32 @@
-const { createClient } = require('redis');
-const nodemailer = require('nodemailer');
+const { Redis } = require('@upstash/redis');
+const { Resend } = require('resend');
+
+const redis = new Redis({
+  url: process.env.UPSTASH_REDIS_REST_URL,
+  token: process.env.UPSTASH_REDIS_REST_TOKEN,
+});
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 async function sendChoresEmail() {
-  const client = createClient({
-    url: `redis://:${process.env.UPSTASH_REDIS_PASSWORD}@${process.env.UPSTASH_REDIS_HOST}:${process.env.UPSTASH_REDIS_PORT}`,
-  });
-
   try {
-    await client.connect();
-
     // Get current week key (Sunday = start of week)
     const now = new Date();
     const weekStart = new Date(now.setDate(now.getDate() - now.getDay()));
     const weekKey = weekStart.toISOString().split('T')[0];
 
-    // Fetch chores for both children
     const children = ['Mash\'Allah', 'Nur Islam'];
     const choresSummary = {};
     let totalAllChildren = 0;
 
     for (const child of children) {
       const choreKey = `asmproductions:chores:${child}:${weekKey}`;
-      const choreData = await client.get(choreKey);
-      
+      // @upstash/redis auto-deserializes stored objects
+      const choreData = await redis.get(choreKey);
+
       let completed = 0;
       if (choreData) {
-        const chores = JSON.parse(choreData);
-        // Count all completed chores across all days
-        Object.values(chores).forEach((dayChores) => {
+        Object.values(choreData).forEach((dayChores) => {
           Object.values(dayChores).forEach((isCompleted) => {
             if (isCompleted) completed++;
           });
@@ -42,9 +41,6 @@ async function sendChoresEmail() {
       totalAllChildren += completed;
     }
 
-    await client.disconnect();
-
-    // Format email body
     const emailBody = `
     <html>
       <head>
@@ -61,7 +57,7 @@ async function sendChoresEmail() {
       <body>
         <h2>Weekly Chores Report</h2>
         <p><strong>Week of:</strong> ${weekStart.toLocaleDateString()}</p>
-        
+
         <div class="summary">
           <h3>Summary</h3>
           ${children
@@ -76,7 +72,7 @@ async function sendChoresEmail() {
             )
             .join('')}
         </div>
-        
+
         <div class="total-box">
           Total Allowance Due: $${totalAllChildren}.00
         </div>
@@ -88,23 +84,17 @@ async function sendChoresEmail() {
     </html>
     `;
 
-    // Send email via HostGator SMTP
-    const transporter = nodemailer.createTransport({
-      host: 'smtp.hostgator.com',
-      port: 465,
-      secure: true,
-      auth: {
-        user: process.env.HOSTGATOR_SMTP_USER,
-        pass: process.env.HOSTGATOR_SMTP_PASS,
-      },
-    });
-
-    await transporter.sendMail({
-      from: 'noreply@asmproductions.co',
-      to: 'amin@asmproductions.co',
+    const { error } = await resend.emails.send({
+      from: 'ASM Productions <noreply@asmproductions.co>',
+      to: ['amin@asmproductions.co'],
       subject: `Weekly Chores Report - Week of ${weekStart.toLocaleDateString()}`,
       html: emailBody,
     });
+
+    if (error) {
+      console.error('Resend error:', error);
+      process.exit(1);
+    }
 
     console.log('Weekly chores email sent successfully');
   } catch (error) {
