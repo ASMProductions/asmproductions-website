@@ -6,7 +6,7 @@ export default function Home() {
       <section className="hero">
         <div className="container">
           <h1>Amin Muhammad</h1>
-          <p>DevOps Engineer. Author. Martial Artist. Musician. Pioneer. Visionary.</p>
+          <p>Renaissance Man</p>
           <p style={{ marginTop: '2rem', fontSize: '1rem', opacity: 0.9 }}>
             Unified across discipline, infrastructure mastery, creative arts, and the philosophy of self-purification.
           </p>
