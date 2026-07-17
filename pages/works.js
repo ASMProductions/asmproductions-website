@@ -5,21 +5,29 @@ export default function Works() {
     {
       title: 'The Mukhlasin Diet',
       edition: '4th Edition | 374 Pages | 26 Chapters',
+      cover: '/images/cover-mukhlasin.jpg',
+      link: 'https://masterylevelfasting.com',
       description:
         'A comprehensive guide to the discipline of fasting rooted in the teachings of How To Eat To Live. The Mukhlasin philosophy centers on self-purification through sustained, high-level fasting mastery—not reduction in food quantity, but the cultivation of transcendent discipline.',
     },
     {
       title: 'Mastery Level Fasting',
+      cover: '/images/cover-mastery.jpg',
+      link: 'https://masterylevelfasting.com',
       description:
         'Advanced methodologies for practitioners ready to transcend the foundational stages. This work documents 35+ years of personal practice and the principles that distinguish true mastery from mere abstinence.',
     },
     {
       title: 'The International Lover',
+      cover: '/images/cover-international-lover.jpg',
+      link: 'https://theinternationallover.com',
       description:
         'A comprehensive examination of vetting standards, matrimonial readiness, and the cultural frameworks necessary for sustainable, spiritually-grounded relationships across international contexts.',
     },
     {
       title: 'The Virtuous Girl',
+      cover: '/images/cover-virtuous-girl.jpg',
+      link: 'https://thevirtuousgirl.com',
       description:
         'Guidance for women seeking clarity on virtue, discipline, and the standards by which sustainable partnerships are built. A foundational text for the serious practitioner.',
     },
@@ -106,9 +114,26 @@ export default function Works() {
           <div className="grid">
             {books.map((book, idx) => (
               <div key={idx} className="card">
+                <a href={book.link} target="_blank" rel="noopener noreferrer">
+                  <img
+                    src={book.cover}
+                    alt={`${book.title} cover`}
+                    style={{
+                      width: '100%',
+                      maxWidth: '200px',
+                      display: 'block',
+                      margin: '0 auto 1.25rem',
+                      borderRadius: '4px',
+                      boxShadow: '0 4px 16px rgba(0,0,0,0.12)',
+                    }}
+                  />
+                </a>
                 <h3>{book.title}</h3>
                 {book.edition && <p style={{ fontSize: '0.9rem', color: '#999' }}>{book.edition}</p>}
                 <p>{book.description}</p>
+                <a href={book.link} target="_blank" rel="noopener noreferrer" className="btn">
+                  Learn More
+                </a>
               </div>
             ))}
           </div>

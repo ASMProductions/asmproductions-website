@@ -21,6 +21,16 @@ export default function History() {
           <p>
             The B-Boy philosophy of breaking—the breaking of one's ego, the breaking of boundaries, the building of community through battle and mutual elevation—became foundational to my understanding of discipline, innovation, and respect for the craft.
           </p>
+          <figure style={{ margin: '2rem auto 0', maxWidth: '380px' }}>
+            <img
+              src="/images/bboy-1986.jpg"
+              alt="Amin ('Bitt') in a headstand freeze, 1986"
+              style={{ width: '100%', borderRadius: '4px', display: 'block' }}
+            />
+            <figcaption style={{ fontSize: '0.85rem', color: '#999', marginTop: '0.5rem', textAlign: 'center' }}>
+              "Bitt" — headstand freeze, circa 1986
+            </figcaption>
+          </figure>
         </div>
       </section>
 
@@ -83,6 +93,29 @@ export default function History() {
             This was not a moment of sadness alone—it was a moment of profound clarity about the nature of legacy, commitment, and the sacred responsibility of those who carry the torch of excellence. Prince embodied every principle I have spent my life pursuing: mastery without compromise, innovation rooted in discipline, and the relentless pursuit of spiritual and artistic truth.
           </p>
 
+          <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', marginTop: '2rem' }}>
+            <figure style={{ flex: '1 1 300px', margin: 0 }}>
+              <img
+                src="/images/paisley-before.jpg"
+                alt="At Paisley Park, September 2015"
+                style={{ width: '100%', borderRadius: '4px', display: 'block', objectFit: 'cover' }}
+              />
+              <figcaption style={{ fontSize: '0.85rem', color: '#999', marginTop: '0.5rem' }}>
+                At Paisley Park, September 2015 — months before.
+              </figcaption>
+            </figure>
+            <figure style={{ flex: '1 1 300px', margin: 0 }}>
+              <img
+                src="/images/paisley-day.jpg"
+                alt="At Paisley Park, April 21, 2016, the day Prince passed"
+                style={{ width: '100%', borderRadius: '4px', display: 'block', objectFit: 'cover' }}
+              />
+              <figcaption style={{ fontSize: '0.85rem', color: '#999', marginTop: '0.5rem' }}>
+                Paisley Park, April 21, 2016 — among those gathered the day he passed.
+              </figcaption>
+            </figure>
+          </div>
+
           <div
             style={{
               marginTop: '2rem',
@@ -100,6 +133,36 @@ export default function History() {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
+          </div>
+        </div>
+      </section>
+
+      {/* Life Gallery */}
+      <section className="section">
+        <div className="container">
+          <h2>Moments Along the Way</h2>
+          <div className="accent-line"></div>
+          <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', marginTop: '2rem' }}>
+            <figure style={{ flex: '1 1 280px', margin: 0 }}>
+              <img
+                src="/images/saviours-day-2011.jpg"
+                alt="Saviours' Day 2011"
+                style={{ width: '100%', borderRadius: '4px', display: 'block', objectFit: 'cover' }}
+              />
+              <figcaption style={{ fontSize: '0.85rem', color: '#999', marginTop: '0.5rem' }}>
+                Saviours' Day, 2011.
+              </figcaption>
+            </figure>
+            <figure style={{ flex: '1 1 280px', margin: 0 }}>
+              <img
+                src="/images/moroccan-robe.jpg"
+                alt="In traditional dress"
+                style={{ width: '100%', borderRadius: '4px', display: 'block', objectFit: 'cover' }}
+              />
+              <figcaption style={{ fontSize: '0.85rem', color: '#999', marginTop: '0.5rem' }}>
+                In traditional dress.
+              </figcaption>
+            </figure>
           </div>
         </div>
       </section>
