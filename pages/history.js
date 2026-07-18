@@ -283,22 +283,22 @@ export default function History() {
             </figure>
             <figure style={{ flex: '1 1 260px', margin: 0 }}>
               <img
+                src="/images/lucius-bey.jpg"
+                alt="With Minister Lucius Bey"
+                style={{ width: '100%', borderRadius: '4px', display: 'block', objectFit: 'cover' }}
+              />
+              <figcaption style={{ fontSize: '0.85rem', color: '#999', marginTop: '0.5rem' }}>
+                With Minister Lucius Bey — who survived a hanging by the Klan, and whose bravery the Most Honorable Elijah Muhammad spoke of.
+              </figcaption>
+            </figure>
+            <figure style={{ flex: '1 1 260px', margin: 0 }}>
+              <img
                 src="/images/kenny-muhammad.jpg"
                 alt="With Kenny Muhammad"
                 style={{ width: '100%', borderRadius: '4px', display: 'block', objectFit: 'cover' }}
               />
               <figcaption style={{ fontSize: '0.85rem', color: '#999', marginTop: '0.5rem' }}>
                 With Kenny Muhammad, "The Human Orchestra."
-              </figcaption>
-            </figure>
-            <figure style={{ flex: '1 1 260px', margin: 0 }}>
-              <img
-                src="/images/foi-salute.jpg"
-                alt="In FOI uniform"
-                style={{ width: '100%', borderRadius: '4px', display: 'block', objectFit: 'cover' }}
-              />
-              <figcaption style={{ fontSize: '0.85rem', color: '#999', marginTop: '0.5rem' }}>
-                In uniform, F.O.I.
               </figcaption>
             </figure>
           </div>
