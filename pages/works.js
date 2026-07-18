@@ -135,6 +135,19 @@ export default function Works() {
           <h2>The Game</h2>
           <div className="accent-line"></div>
           <div className="card" style={{ maxWidth: '760px' }}>
+            <a href="https://thereparationsgame.com" target="_blank" rel="noopener noreferrer">
+              <img
+                src="/images/reparations-game.jpg"
+                alt="The Reparations Game — 400 years of Black American history across seven eras"
+                style={{
+                  width: '100%',
+                  display: 'block',
+                  margin: '0 0 1.5rem',
+                  borderRadius: '4px',
+                  boxShadow: '0 4px 16px rgba(0,0,0,0.12)',
+                }}
+              />
+            </a>
             <h3>The Reparations Game</h3>
             <p style={{ fontSize: '0.9rem', color: '#999' }}>
               Black Survival in White America · 74 Cards · 7 Eras
