@@ -137,10 +137,45 @@ export default function History() {
               allowFullScreen
             ></iframe>
           </div>
+
+          <p style={{ marginTop: '2.5rem' }}>
+            Music has also kept me in company with artists who take the craft seriously.
+          </p>
+
+          <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', marginTop: '1.5rem' }}>
+            <figure style={{ flex: '1 1 240px', margin: 0 }}>
+              <img
+                src="/images/brother-ali.jpg"
+                alt="With Brother Ali, 2013"
+                style={{ width: '100%', borderRadius: '4px', display: 'block', objectFit: 'cover' }}
+              />
+              <figcaption style={{ fontSize: '0.85rem', color: '#999', marginTop: '0.5rem' }}>
+                With Brother Ali, 2013.
+              </figcaption>
+            </figure>
+            <figure style={{ flex: '1 1 240px', margin: 0 }}>
+              <img
+                src="/images/freeway.jpg"
+                alt="With Freeway"
+                style={{ width: '100%', borderRadius: '4px', display: 'block', objectFit: 'cover' }}
+              />
+              <figcaption style={{ fontSize: '0.85rem', color: '#999', marginTop: '0.5rem' }}>
+                With Freeway.
+              </figcaption>
+            </figure>
+            <figure style={{ flex: '1 1 240px', margin: 0 }}>
+              <img
+                src="/images/stokley.jpg"
+                alt="With Stokley, 2009"
+                style={{ width: '100%', borderRadius: '4px', display: 'block', objectFit: 'cover' }}
+              />
+              <figcaption style={{ fontSize: '0.85rem', color: '#999', marginTop: '0.5rem' }}>
+                With Stokley, 2009.
+              </figcaption>
+            </figure>
+          </div>
         </div>
       </section>
-
-      {/* Prince & Paisley Park Section */}
       <section className="section">
         <div className="container">
           <h2>Witness at Paisley Park</h2>
@@ -192,6 +227,124 @@ export default function History() {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
+          </div>
+        </div>
+      </section>
+
+      {/* Service & Community */}
+      <section className="section">
+        <div className="container">
+          <h2>Service & Community</h2>
+          <div className="accent-line"></div>
+          <p>
+            Much of my life has been spent in service alongside men whose commitment shaped a movement. In 1995, in the run-up to the Million Man March, I served on security detail for Reverend Benjamin Chavis. Over the years I have stood with ministers, elders, and artists whose work carried the discipline of faith into public life.
+          </p>
+
+          <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', marginTop: '2rem' }}>
+            <figure style={{ flex: '1 1 260px', margin: 0 }}>
+              <img
+                src="/images/chavis-1995.jpg"
+                alt="On security detail for Reverend Benjamin Chavis, 1995"
+                style={{ width: '100%', borderRadius: '4px', display: 'block', objectFit: 'cover' }}
+              />
+              <figcaption style={{ fontSize: '0.85rem', color: '#999', marginTop: '0.5rem' }}>
+                On detail for Reverend Benjamin Chavis, 1995 — before the Million Man March.
+              </figcaption>
+            </figure>
+            <figure style={{ flex: '1 1 260px', margin: 0 }}>
+              <img
+                src="/images/nathaniel-muhammad.jpg"
+                alt="With Nathaniel Musaaleh Muhammad"
+                style={{ width: '100%', borderRadius: '4px', display: 'block', objectFit: 'cover' }}
+              />
+              <figcaption style={{ fontSize: '0.85rem', color: '#999', marginTop: '0.5rem' }}>
+                With Nathaniel Musaaleh Muhammad, son of the Most Honorable Elijah Muhammad — Ramadan, 2011.
+              </figcaption>
+            </figure>
+            <figure style={{ flex: '1 1 260px', margin: 0 }}>
+              <img
+                src="/images/nuri-muhammad.jpg"
+                alt="With Minister Nuri Muhammad"
+                style={{ width: '100%', borderRadius: '4px', display: 'block', objectFit: 'cover' }}
+              />
+              <figcaption style={{ fontSize: '0.85rem', color: '#999', marginTop: '0.5rem' }}>
+                With the great Minister Nuri Muhammad, 2012.
+              </figcaption>
+            </figure>
+            <figure style={{ flex: '1 1 260px', margin: 0 }}>
+              <img
+                src="/images/abdul-aziz.jpg"
+                alt="With Minister Abdul Aziz"
+                style={{ width: '100%', borderRadius: '4px', display: 'block', objectFit: 'cover' }}
+              />
+              <figcaption style={{ fontSize: '0.85rem', color: '#999', marginTop: '0.5rem' }}>
+                With Minister Abdul Aziz.
+              </figcaption>
+            </figure>
+            <figure style={{ flex: '1 1 260px', margin: 0 }}>
+              <img
+                src="/images/kenny-muhammad.jpg"
+                alt="With Kenny Muhammad"
+                style={{ width: '100%', borderRadius: '4px', display: 'block', objectFit: 'cover' }}
+              />
+              <figcaption style={{ fontSize: '0.85rem', color: '#999', marginTop: '0.5rem' }}>
+                With Kenny Muhammad, "The Human Orchestra."
+              </figcaption>
+            </figure>
+            <figure style={{ flex: '1 1 260px', margin: 0 }}>
+              <img
+                src="/images/foi-salute.jpg"
+                alt="In FOI uniform"
+                style={{ width: '100%', borderRadius: '4px', display: 'block', objectFit: 'cover' }}
+              />
+              <figcaption style={{ fontSize: '0.85rem', color: '#999', marginTop: '0.5rem' }}>
+                In uniform, F.O.I.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      {/* Morocco & Marriage */}
+      <section className="section">
+        <div className="container">
+          <h2>Morocco</h2>
+          <div className="accent-line"></div>
+          <p>
+            What I later wrote about in The International Lover, I first lived. I traveled to Morocco prepared—the culture, the language, the family structure, the process—and was paraded through the streets of Rabat on my way to meet my fiancée, in the tradition of her people.
+          </p>
+
+          <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', marginTop: '2rem' }}>
+            <figure style={{ flex: '1 1 260px', margin: 0 }}>
+              <img
+                src="/images/morocco-parade.jpg"
+                alt="Paraded through Rabat on the way to meet my fiancée"
+                style={{ width: '100%', borderRadius: '4px', display: 'block', objectFit: 'cover' }}
+              />
+              <figcaption style={{ fontSize: '0.85rem', color: '#999', marginTop: '0.5rem' }}>
+                Paraded through Rabat, on the way to meet my fiancée.
+              </figcaption>
+            </figure>
+            <figure style={{ flex: '1 1 260px', margin: 0 }}>
+              <img
+                src="/images/morocco-wedding.jpg"
+                alt="Our wedding in Morocco"
+                style={{ width: '100%', borderRadius: '4px', display: 'block', objectFit: 'cover' }}
+              />
+              <figcaption style={{ fontSize: '0.85rem', color: '#999', marginTop: '0.5rem' }}>
+                Our wedding, Morocco.
+              </figcaption>
+            </figure>
+            <figure style={{ flex: '1 1 260px', margin: 0 }}>
+              <img
+                src="/images/wife-expecting.jpg"
+                alt="Two weeks before the birth of our first child"
+                style={{ width: '100%', borderRadius: '4px', display: 'block', objectFit: 'cover' }}
+              />
+              <figcaption style={{ fontSize: '0.85rem', color: '#999', marginTop: '0.5rem' }}>
+                Two weeks before the birth of our first child.
+              </figcaption>
+            </figure>
           </div>
         </div>
       </section>
