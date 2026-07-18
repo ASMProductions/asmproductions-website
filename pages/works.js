@@ -33,6 +33,16 @@ export default function Works() {
     },
   ];
 
+  const career = [
+    { year: '1980', role: 'First CompuCamp', note: 'Where it began.' },
+    { year: '1992', role: 'TeleTemps', note: 'Built computers from scratch.' },
+    { year: '1995', role: 'IBM', note: 'Systems administration.' },
+    { year: '1998', role: 'Mayo Clinic', note: 'Networking.' },
+    { year: '2006', role: 'Carlson Companies', note: 'Systems administration across enterprise networks.' },
+    { year: '2016', role: 'Black Knight', note: 'DevOps—builds, deployments, and server networks.' },
+    { year: '2021', role: 'Senior Business Consultant', note: 'Managing Tier-1 banking relationships.' },
+  ];
+
   const skills = [
     {
       category: 'DevOps & Platform Engineering',
@@ -125,8 +135,43 @@ export default function Works() {
           <h2>Technical Mastery</h2>
           <div className="accent-line"></div>
           <p>
-            9+ years of enterprise infrastructure automation, supporting mission-critical financial systems and Tier-1 institutions. Specialized in CI/CD architecture, cloud infrastructure, and compliance-driven deployment frameworks.
+            My path in technology spans more than four decades—from my first CompuCamp in 1980 to building enterprise systems for some of the most demanding institutions in American technology, healthcare, and finance. What began with curiosity became a career defined by the same discipline that runs through everything I do.
           </p>
+          <p>
+            Along the way I have designed, built, and run mission-critical infrastructure, and applied that same builder's mindset to my own work: I built every platform represented on this site—Mastery Level Fasting, The International Lover, The Virtuous Girl, and this site itself—and I wrote the books that anchor them.
+          </p>
+
+          <div style={{ marginTop: '3rem' }}>
+            {career.map((entry, idx) => (
+              <div
+                key={idx}
+                style={{
+                  display: 'flex',
+                  gap: '1.5rem',
+                  padding: '1.25rem 0',
+                  borderBottom: '1px solid #e8e6e3',
+                  alignItems: 'baseline',
+                }}
+              >
+                <div
+                  style={{
+                    flex: '0 0 60px',
+                    fontSize: '1.1rem',
+                    fontWeight: 600,
+                    color: '#b8764e',
+                  }}
+                >
+                  {entry.year}
+                </div>
+                <div style={{ flex: 1 }}>
+                  <div style={{ fontWeight: 600, fontSize: '1.05rem' }}>{entry.role}</div>
+                  <div style={{ color: '#6b6b6b', fontSize: '0.95rem', marginTop: '0.15rem' }}>
+                    {entry.note}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
 
           <div style={{ marginTop: '3rem' }}>
             {skills.map((skillGroup, idx) => (
