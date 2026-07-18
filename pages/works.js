@@ -91,7 +91,7 @@ export default function Works() {
       <section className="hero">
         <div className="container">
           <h1>Works</h1>
-          <p>Books and technical mastery. The tangible output of decades of discipline and research.</p>
+          <p>Books, the game, and technical mastery. The tangible output of decades of discipline and research.</p>
         </div>
       </section>
 
@@ -129,6 +129,34 @@ export default function Works() {
         </div>
       </section>
 
+      {/* The Game Section */}
+      <section className="section">
+        <div className="container">
+          <h2>The Game</h2>
+          <div className="accent-line"></div>
+          <div className="card" style={{ maxWidth: '760px' }}>
+            <h3>The Reparations Game</h3>
+            <p style={{ fontSize: '0.9rem', color: '#999' }}>
+              Black Survival in White America · 74 Cards · 7 Eras
+            </p>
+            <p>
+              An educational survival game spanning 400 years of documented history. Players take on a
+              Foundational Black American lineage and move from the Sovereign Age through the Reparations
+              Endgame—every card a choice, every era grounded in the historical record. Built to teach
+              through play what textbooks leave out.
+            </p>
+            <a
+              href="https://thereparationsgame.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn"
+            >
+              Enter the Game
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Tech Skills Section */}
       <section className="section">
         <div className="container">
@@ -138,7 +166,7 @@ export default function Works() {
             My path in technology spans more than four decades—from my first CompuCamp in 1980 to building enterprise systems for some of the most demanding institutions in American technology, healthcare, and finance. What began with curiosity became a career defined by the same discipline that runs through everything I do.
           </p>
           <p>
-            Along the way I have designed, built, and run mission-critical infrastructure, and applied that same builder's mindset to my own work: I built every platform represented on this site—Mastery Level Fasting, The International Lover, The Virtuous Girl, and this site itself—and I wrote the books that anchor them.
+            Along the way I have designed, built, and run mission-critical infrastructure, and applied that same builder's mindset to my own work: I built every platform represented on this site—Mastery Level Fasting, The International Lover, The Virtuous Girl, The Reparations Game, and this site itself—and I wrote the books that anchor them.
           </p>
 
           <div style={{ marginTop: '3rem' }}>
