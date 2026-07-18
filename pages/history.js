@@ -293,6 +293,16 @@ export default function History() {
             </figure>
             <figure style={{ flex: '1 1 260px', margin: 0 }}>
               <img
+                src="/images/saviours-day-2011.jpg"
+                alt="With Jibril Muhammad, Saviours' Day 2011"
+                style={{ width: '100%', borderRadius: '4px', display: 'block', objectFit: 'cover' }}
+              />
+              <figcaption style={{ fontSize: '0.85rem', color: '#999', marginTop: '0.5rem' }}>
+                With the great Jibril Muhammad — advisor and close confidant to Minister Louis Farrakhan. Saviours' Day, 2011.
+              </figcaption>
+            </figure>
+            <figure style={{ flex: '1 1 260px', margin: 0 }}>
+              <img
                 src="/images/kenny-muhammad.jpg"
                 alt="With Kenny Muhammad"
                 style={{ width: '100%', borderRadius: '4px', display: 'block', objectFit: 'cover' }}
@@ -345,34 +355,14 @@ export default function History() {
                 Two weeks before the birth of our first child.
               </figcaption>
             </figure>
-          </div>
-        </div>
-      </section>
-
-      {/* Life Gallery */}
-      <section className="section">
-        <div className="container">
-          <h2>Moments Along the Way</h2>
-          <div className="accent-line"></div>
-          <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', marginTop: '2rem' }}>
-            <figure style={{ flex: '1 1 280px', margin: 0 }}>
-              <img
-                src="/images/saviours-day-2011.jpg"
-                alt="Saviours' Day 2011"
-                style={{ width: '100%', borderRadius: '4px', display: 'block', objectFit: 'cover' }}
-              />
-              <figcaption style={{ fontSize: '0.85rem', color: '#999', marginTop: '0.5rem' }}>
-                With the great Jibril Muhammad — Saviours' Day, 2011.
-              </figcaption>
-            </figure>
-            <figure style={{ flex: '1 1 280px', margin: 0 }}>
+            <figure style={{ flex: '1 1 260px', margin: 0 }}>
               <img
                 src="/images/moroccan-robe.jpg"
-                alt="In traditional dress"
+                alt="In traditional dress, our daughter asleep on my lap"
                 style={{ width: '100%', borderRadius: '4px', display: 'block', objectFit: 'cover' }}
               />
               <figcaption style={{ fontSize: '0.85rem', color: '#999', marginTop: '0.5rem' }}>
-                In traditional dress.
+                In traditional dress — our daughter asleep on my lap.
               </figcaption>
             </figure>
           </div>
