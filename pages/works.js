@@ -214,6 +214,29 @@ export default function Works() {
             ))}
           </div>
 
+          <div style={{ marginTop: '3.5rem' }}>
+            <h3 style={{ fontSize: '1.3rem', marginBottom: '1rem' }}>Selected Work</h3>
+            <div className="card" style={{ maxWidth: '600px' }}>
+              <h4 style={{ marginTop: 0 }}>Digital Patient Registration System</h4>
+              <p>
+                A web-based intake platform built to replace paper registration in a pediatric
+                practice—patient forms, validation, and submission handled end to end. Designed,
+                built, and deployed independently.
+              </p>
+              <a
+                href="https://zoe-registration-system.onrender.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn"
+              >
+                View Demo
+              </a>
+              <p style={{ fontSize: '0.82rem', color: '#999', marginTop: '0.85rem', marginBottom: 0 }}>
+                Demo environment — may take a moment to wake on first load.
+              </p>
+            </div>
+          </div>
+
           <div style={{ marginTop: '3rem' }}>
             {skills.map((skillGroup, idx) => (
               <div key={idx} style={{ marginBottom: '3rem' }}>
